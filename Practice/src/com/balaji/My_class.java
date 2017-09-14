@@ -1,0 +1,37 @@
+//Anonymous Inner class as argument
+package com.balaji;
+
+//interface
+interface Message {
+	String greet();
+}
+
+public class My_class {
+	// method which accepts the object of interface Message
+	public void displayMessage(Message m) {
+		System.out.println(m.greet() + ", This is an example of anonymous inner class as an argument");
+	}
+
+	public static void main(String args[]) {
+		// Instantiating the class
+		My_class obj = new My_class();
+
+		// Passing an anonymous inner class as an argument
+		obj.displayMessage(new Message() {
+			public String greet() {
+				return "Hello";
+			}
+		});
+
+		Employee1 employee1 = new Employee1();
+		System.out.println(obj.check(employee1));
+	}
+
+	public boolean check(Employee1 e) {
+
+		if (e != null && e.getInfosys() != null && e.getInfosys().getBalaji() != null) {
+			return e.getInfosys().getBalaji().getSecret().equalsIgnoreCase("secret");
+		}
+		return false;
+	}
+}
