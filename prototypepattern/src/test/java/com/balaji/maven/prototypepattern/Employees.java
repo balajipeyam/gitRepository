@@ -23,6 +23,7 @@ public class Employees {
 		this.empId = id;
 		this.empName = name;
 		this.empEmail = email;
+		System.out.println("New Employee Created : \n" + this.toString());
 	}
 
 	public int getEmpId() {

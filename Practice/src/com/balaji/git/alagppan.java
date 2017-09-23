@@ -3,7 +3,7 @@ package com.balaji.git;
 public class alagppan {
 	
 	
-	int i=5;
+	int i=6;
 
 
 }
