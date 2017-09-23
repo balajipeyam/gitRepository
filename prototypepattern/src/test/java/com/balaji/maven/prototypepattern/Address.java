@@ -13,7 +13,7 @@ import org.hibernate.annotations.Parameter;
 @Entity
 @Table(name = "ADDRESS")
 public class Address {
-
+	// Address Entity having one-to-one relation with Employees Entity
 	@Id
 	@Column(name = "empid", unique = true, nullable = false)
 	@GenericGenerator(name = "gen", strategy = "foreign", parameters = {
