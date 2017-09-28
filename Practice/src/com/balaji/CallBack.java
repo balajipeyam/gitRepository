@@ -36,6 +36,6 @@ public class CallBack {
 	// Main driver.
 	public static void main(String[] args) {
 		Boss b = new Boss();
-		b.directMethod();
+		//b.directMethod();
 	}
 }

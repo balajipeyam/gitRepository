@@ -27,16 +27,40 @@ public class Practice {
 		intList.add(2);
 		intList.add(100);
 		intList.add(1);
-		/*Comparator<Integer> comp = (Integer a, Integer b) -> {
-			return a.compareTo(b);
-		};
-		Collections.sort(intList, comp);*/
+		/*
+		 * Comparator<Integer> comp = (Integer a, Integer b) -> { return
+		 * a.compareTo(b); }; Collections.sort(intList, comp);
+		 */
 		Collections.sort(intList, (a, b) -> a.compareTo(b));
-		//Collections.sort(intList);
+		// Collections.sort(intList);
 		System.out.println(intList.get(0));
 		System.out.println(intList.get(1));
 		System.out.println(intList.get(2));
 		
+		new Practice.NewInt().getInterface().method();
+
+	}
+	
+	
+	static class NewInt
+	{
+		public NewInterface getInterface()
+		{
+			return new NewInterface() {
+
+				@Override
+				public void method() {
+					System.out.println("ANonymous");
+
+				}
+			};
 		}
+		
+		public NewInt build()
+		{
+			return new NewInt();
+		}
+	}
+
 
 }
