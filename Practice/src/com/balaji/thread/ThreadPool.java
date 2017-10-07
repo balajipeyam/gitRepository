@@ -30,7 +30,7 @@ public class ThreadPool {
 	public static void main(String[] args) throws InterruptedException {
 		ExecutorService executor = Executors.newFixedThreadPool(4);
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 3; i++) {
 			Runnable worker = new WorkerThread(i);
 			// WorkerThread worker = new WorkerThread(i);
 			System.out.println(System.currentTimeMillis());

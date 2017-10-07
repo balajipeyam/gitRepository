@@ -10,20 +10,13 @@ public class TestDeadlockExample1 {
 			public void run() {
 				synchronized (resource1) {
 					System.out.println("Thread 1: locked resource 1");
-					try {
-						Thread.sleep(100);
-					} catch (Exception e) {
-					}
-					resource1.notify();
 					System.out.println("Thread 1 : Released Resource 1");
-				}
-				synchronized (resource2) {
-					System.out.println("Thread 1: locked resource 2");
-					resource2.notify();
-					System.out.println("Thread 1 : Released Resource 2");
+					synchronized (resource2) {
+						System.out.println("Thread 1: locked resource 2");
+						System.out.println("Thread 1 : Released Resource 2");
+					}
 				}
 			}
-
 		};
 
 		// t2 tries to lock resource2 then resource1
@@ -31,18 +24,11 @@ public class TestDeadlockExample1 {
 			public void run() {
 				synchronized (resource2) {
 					System.out.println("Thread 2: locked resource 2");
-					try {
-						Thread.sleep(100);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					resource2.notify();
 					System.out.println("Thread 2 : Released Resource 2");
-				}
-				synchronized (resource1) {
-					System.out.println("Thread 2 : locked resource 1");
-					resource1.notify();
-					System.out.println("Thread 2 : Released Resource 1");
+					synchronized (resource1) {
+						System.out.println("Thread 2 : locked resource 1");
+						System.out.println("Thread 2 : Released Resource 1");
+					}
 				}
 			}
 		};

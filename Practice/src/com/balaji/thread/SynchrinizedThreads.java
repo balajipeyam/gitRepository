@@ -17,6 +17,9 @@ class Table {
 // Table for Synchronized block
 class Table2 {
 	void printTable(int n) {
+		
+		
+		
 		synchronized (this) {
 			for (int i = 1; i <= 5; i++) {
 				System.out.println(n + " X " + i + " = " + n * i);
@@ -31,10 +34,10 @@ class Table2 {
 }
 
 class ThreadClass1 extends Thread {
-	private Table2 t;
+	private Table t;
 	private int n;
 
-	public ThreadClass1(Table2 t, int n) {
+	public ThreadClass1(Table t, int n) {
 		this.t = t;
 		this.n = n;
 	}
@@ -58,7 +61,7 @@ class ThreadClass1 extends Thread {
 
 public class SynchrinizedThreads {
 	public static void main(String[] args) {
-		Table2 t = new Table2();
+		Table t = new Table();
 		ThreadClass1 t1 = new ThreadClass1(t, 5);
 		ThreadClass1 t2 = new ThreadClass1(t, 10);
 		t1.start();
