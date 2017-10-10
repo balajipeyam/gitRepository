@@ -1,4 +1,4 @@
-package com.balaji;
+package com.balaji.designpatterns;
 
 public class Singleton {
 	private String x = "string";

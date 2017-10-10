@@ -15,7 +15,7 @@ public class EmployeeManagement {
 			session.save(emp);
 		} catch (Exception e) {
 			System.out.println(
-					"Exception occured : Primary Key Constraint Violated. Unable to insert teh object into Database");
+					"Exception occured : Primary Key Constraint Violated. Unable to insert the object into Database");
 		}
 		transaction.commit();
 
