@@ -1,39 +1,43 @@
 package com.balaji.thread;
 
+class Customer1 {
+	int amount = 10000;
+
+	synchronized void withdraw(int amount) {
+		System.out.println("going to withdraw...");
+
+		if (this.amount < amount) {
+			System.out.println("Less balance; waiting for deposit...");
+			try {
+				wait();
+			} catch (Exception e) {
+			}
+		}
+		this.amount -= amount;
+		System.out.println("withdraw completed...");
+	}
+
+	synchronized void deposit(int amount) {
+		System.out.println("going to deposit...");
+		this.amount += amount;
+		System.out.println("deposit completed... ");
+		notify();
+	}
+}
+
 public class TestDeadlockExample1 {
-	public static void main(String[] args) {
-		final String resource1 = "ratan jaiswal";
-		final String resource2 = "vimal jaiswal";
-
-		// t1 tries to lock resource1 then resource2
-		Thread t1 = new Thread() {
+	public static void main(String args[]) {
+		final Customer1 c = new Customer1();
+		new Thread() {
 			public void run() {
-				synchronized (resource1) {
-					System.out.println("Thread 1: locked resource 1");
-					System.out.println("Thread 1 : Released Resource 1");
-					synchronized (resource2) {
-						System.out.println("Thread 1: locked resource 2");
-						System.out.println("Thread 1 : Released Resource 2");
-					}
-				}
+				c.withdraw(15000);
 			}
-		};
-
-		// t2 tries to lock resource2 then resource1
-		Thread t2 = new Thread() {
+		}.start();
+		new Thread() {
 			public void run() {
-				synchronized (resource2) {
-					System.out.println("Thread 2: locked resource 2");
-					System.out.println("Thread 2 : Released Resource 2");
-					synchronized (resource1) {
-						System.out.println("Thread 2 : locked resource 1");
-						System.out.println("Thread 2 : Released Resource 1");
-					}
-				}
+				c.deposit(10000);
 			}
-		};
+		}.start();
 
-		t1.start();
-		t2.start();
 	}
 }

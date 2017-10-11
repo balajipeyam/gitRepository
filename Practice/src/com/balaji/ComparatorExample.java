@@ -88,6 +88,7 @@ public class ComparatorExample {
 
 		Arrays.sort(empArray, Employee.SalaryComparator);
 		System.out.println("Sort by salary : " + Arrays.toString(empArray));
+
 	}
 
 }

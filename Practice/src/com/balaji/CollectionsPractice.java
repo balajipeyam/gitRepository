@@ -12,8 +12,10 @@ public class CollectionsPractice {
 	public static void main(String[] args) {
 		String a = "balaji";
 		String b = "Peyam";
+
 		System.out.println(b.compareTo(a));
 		System.out.println(a.compareTo(b));
+
 		Set<String> set = new TreeSet<String>();
 		List<String> list = new LinkedList<String>();
 		Map<String, String> map = new HashMap<String, String>();
@@ -24,11 +26,11 @@ public class CollectionsPractice {
 		set.add(a);
 		set.add(b);
 		set.add(a);
-		// set.add(null);
+		//set.add(null);
 
 		map.put(a, b);
-		map.put(b, a);
-		// map.put(a, a);
+		map.put(b, null);
+		//map.put(a, a);
 
 		Iterator<String> iterator = list.iterator();
 		Iterator<String> itr2 = set.iterator();
@@ -42,11 +44,11 @@ public class CollectionsPractice {
 		 * while (itr2.hasNext()) { System.out.println(itr2.next()); }
 		 */
 		for (String s : set) {
-			System.out.println(s);
+			System.out.println("Set Values : " + s);
 		}
 		System.out.println("\n");
 		while (itr3.hasNext()) {
-			System.out.println(itr3.next());
+			System.out.println("Map Values : " + itr3.next());
 		}
 
 	}

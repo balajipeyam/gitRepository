@@ -87,6 +87,7 @@ class TwoWheelerFactory implements AutomobileAbstractFactory {
 
 	@Override
 	public Automobile createAutomobile() {
+		System.out.println("Creating 2 wheeler");
 		return new TwoWheeler(engine, capacity, fuel);
 	}
 }
@@ -104,6 +105,7 @@ class FourWheelerFactory implements AutomobileAbstractFactory {
 
 	@Override
 	public Automobile createAutomobile() {
+		System.out.println("Creating 4 wheeler");
 		return new FourWheeler(engine, capacity, fuel);
 	}
 
