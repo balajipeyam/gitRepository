@@ -1,7 +1,8 @@
 package com.balaji.hackerrank;
 
-import java.io.*;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
 
 class Node2 {
 	int data;
@@ -17,29 +18,19 @@ class Node2 {
 public class Day24 {
 	public static Node2 removeDuplicates(Node2 head) {
 		Set<Integer> allListValues = new HashSet<Integer>();
-		Node2 returnHead = null;
-		if (head == null)
-			return returnHead;
-		else if (head.next == null) {
-			returnHead.data = head.data;
-			returnHead.next = null;
-		} else {
-			System.out.println("Adding " + head.data + " to set");
-			allListValues.add(head.data);
-			while (head.next != null) {
-				head = head.next;
-				System.out.println("Adding " + head.data + " to set");
-				if (!allListValues.add(head.data)) {
-					head=head.next;
-
-				} else {
-					Node2 cur = head;
-					Node2 next = head.next;
-
-				}
+		if (head == null || head.next == null)
+			return head;
+		else {
+			Node2 temp = head;
+			allListValues.add(temp.data);
+			while (temp.next != null) {
+				Node2 next = temp.next;
+				if (!allListValues.add(next.data))
+					temp.next = next.next;
+				else
+					temp = next;
 			}
 		}
-
 		return head;
 	}
 
