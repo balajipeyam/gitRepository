@@ -18,6 +18,9 @@ public class HibernateImpl {
 		for (Employees emp : allEmps)
 			System.out.println(emp.toString());
 		session.close();
+		Configuration configuration = new Configuration();
+		SessionFactory sessionFactory2 = configuration.configure().buildSessionFactory();
+		Session session2 = sessionFactory2.openSession();
 	}
 
 }
