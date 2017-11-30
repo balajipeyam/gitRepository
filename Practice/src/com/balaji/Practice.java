@@ -2,10 +2,14 @@ package com.balaji;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+interface NewInterface {
+	public void method();
+
+}
 
 public class Practice {
 
@@ -36,16 +40,13 @@ public class Practice {
 		System.out.println(intList.get(0));
 		System.out.println(intList.get(1));
 		System.out.println(intList.get(2));
-		
+
 		new Practice.NewInt().getInterface().method();
 
 	}
-	
-	
-	static class NewInt
-	{
-		public NewInterface getInterface()
-		{
+
+	static class NewInt {
+		public NewInterface getInterface() {
 			return new NewInterface() {
 
 				@Override
@@ -55,12 +56,10 @@ public class Practice {
 				}
 			};
 		}
-		
-		public NewInt build()
-		{
+
+		public NewInt build() {
 			return new NewInt();
 		}
 	}
-
 
 }

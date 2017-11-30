@@ -1,5 +1,7 @@
 package com.balaji.sortalgorithms;
 
+import java.util.Arrays;
+
 public class SelectionSort {
 	private int[] array;
 
@@ -17,16 +19,16 @@ public class SelectionSort {
 					array[i] = temp;
 				}
 			}
+			System.out.println("Iteration " + i + Arrays.toString(array));
 		}
-
 		return array;
 	}
 
 	public static void main(String[] args) {
 		int[] array1 = { 9, 7, 2, 2, 3, 9, 4, 5, 7, 9, 1 };
 		SelectionSort b = new SelectionSort(array1);
+		System.out.println("Input Array : " + Arrays.toString(array1));
 		array1 = b.sort();
-		for (int i : array1)
-			System.out.println(i);
+		System.out.println("Sorted Array :" + Arrays.toString(array1));
 	}
 }

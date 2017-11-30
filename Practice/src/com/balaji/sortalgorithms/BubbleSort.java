@@ -1,5 +1,7 @@
 package com.balaji.sortalgorithms;
 
+import java.util.Arrays;
+
 public class BubbleSort {
 
 	private int[] array;
@@ -27,9 +29,9 @@ public class BubbleSort {
 	public static void main(String[] args) {
 		int[] array1 = { 9, 7, 2, 2, 3, 9, 4, 5, 7, 9, 1 };
 		BubbleSort b = new BubbleSort(array1);
+		System.out.println("Input Array : " + Arrays.toString(array1));
 		array1 = b.sort();
-		for (int i : array1)
-			System.out.println(i);
+		System.out.println("Sorted Array :" + Arrays.toString(array1));
 	}
 
 }

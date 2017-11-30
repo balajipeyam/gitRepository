@@ -10,6 +10,8 @@ class Automobile1 {
 	private boolean isAirConditioned;
 	private int fuelTankCapacity;
 
+	
+	//private constructor, since new object creation is restricted from outside
 	private Automobile1(AutomobileBuilder automobileBuilder) {
 		this.engineType = automobileBuilder.engineType;
 		this.fuelType = automobileBuilder.fuelType;
