@@ -6,16 +6,19 @@
 	<session-factory>
 		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/practice2</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/studentregistration</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">root</property>
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		<!-- <property name="hibernate.hbm2ddl.auto">create</property> -->
 		<property name="connection.pool_size">10</property>
 
-		<mapping class="com.balaji.maven.prototypepattern.Employees"></mapping>
-		<mapping class="com.balaji.maven.prototypepattern.Address" />
+		<!-- mapping for annotated classed -->
+		<mapping class="com.student.entity.Student" />
+		<mapping class="com.student.entity.Address" />
+		<mapping class="com.student.entity.BorrowBook" />
+
 	</session-factory>
 </hibernate-configuration>
