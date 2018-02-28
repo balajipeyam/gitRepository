@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Balaji" verbose="1">
+	<listeners>
+		<listener class-name="com.balaji.listeners.UIListener" />
+	</listeners>
+
+	<test name="Google">
+		<classes>
+			<class name="com.balaji.Automation.TestGmailPOM" />
+		</classes>
+	</test>
+
+</suite>

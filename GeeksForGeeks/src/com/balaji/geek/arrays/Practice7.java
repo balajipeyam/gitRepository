@@ -1,3 +1,4 @@
+<<<<<<< Upstream, based on branch 'master' of https://github.com/balajipeyam/gitRepository.git
 //Maximum product of an increasing subsequence
 package com.balaji.geek.arrays;
 
@@ -9,4 +10,11 @@ public class Practice7 {
 		// LIS {1,3,4,5,6,7,8,30}
 		
 	}
+=======
+//Count subarrays with equal number of 1’s and 0’s
+package com.balaji.geek.arrays;
+
+public class Practice7 {
+
+>>>>>>> 8f71139 Infy Laptop
 }

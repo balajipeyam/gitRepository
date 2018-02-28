@@ -2,14 +2,24 @@ package com.balaji;
 
 public class Balaji {
 
-	private String secret = "secret";
+	public static void main(String[] args) {
+		String balaji = "balaji";
+		String peyam = "peyam";
 
-	public String getSecret() {
-		return secret;
+		balaji = balaji + peyam;
+		System.out.println(balaji);
+		peyam = balaji.substring(0, balaji.length() - peyam.length());
+		balaji = balaji.substring(balaji.length() - peyam.length() + 1, balaji.length());
+		System.out.println(balaji + peyam);
+		String temp = balaji;
+		balaji = peyam;
+		peyam = temp;
+		System.out.println(balaji + peyam);
 	}
 
-	public void setSecret(String secret) {
-		this.secret = secret;
+	public String getSecret() {
+		// TODO Auto-generated method stub
+		return "secret";
 	}
 
 }

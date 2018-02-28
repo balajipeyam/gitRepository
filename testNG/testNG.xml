@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Balaji" verbose="1" parallel="none">
+	<listeners>
+		<listener class-name="com.balaji.test.EmployeeListener" />
+	</listeners>
+	<test name="case1">
+		<classes>
+			<class name="com.balaji.test.EmployeeTest" />
+		</classes>
+	</test>
+	<!-- Tests for EmployeeTest has been excluded because only Class Group "testclassgroup" 
+		is included -->
+	<test name="case2">
+		<groups>
+			<run>
+				<include name="testclassgroup" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.balaji.test.ClassGroupsTest" />
+			<class name="com.balaji.test.EmployeeTest" />
+		</classes>
+	</test>
+
+</suite>
